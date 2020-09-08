@@ -1,0 +1,74 @@
+.chatitem {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  height: 70px;
+  transition: 0.2s;
+}
+
+.chatitem:hover {
+  background: #f5f5f5;
+}
+
+.chatitem-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  margin-left: 15px;
+}
+
+section.chatitem-lines {
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-bottom: 1px solid #eee;
+  padding-right: 15px;
+  margin-left: 15px;
+
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.chatitem-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.chatitem-name {
+  font-size: 17px;
+  color: #000;
+  width: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.chatitem-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.chatitem-lastmessage {
+  display: flex;
+  width: 100%;
+}
+
+.chatitem-lastmessage p {
+  font-size: 14px;
+  color: #999;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+}
