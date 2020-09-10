@@ -14,7 +14,7 @@ import './App.css'
 export default () => {
   const [chatlist, setChatlist] = useState([
     {chatId: 1, title: 'John Doe'},
-    {chatId: 2, title: 'John Doe'},
+    {chatId: 2, title: 'Daniel Hessel'},
     {chatId: 3, title: 'John Doe'},
     {chatId: 4, title: 'John Doe'},
     {chatId: 5, title: 'John Doe'},
@@ -63,6 +63,7 @@ export default () => {
           {chatlist.map((item, key) => (
             <ChatListItem 
               key={key} 
+              data={item}
               active={activeChat.chatId === chatlist[key].chatId}
               onClick={() => setActiveChat(chatlist[key])} 
             />

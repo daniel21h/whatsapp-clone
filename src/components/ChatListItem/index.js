@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-export default function ChatListItem({ onClick, active }) {
+export default function ChatListItem({ onClick, active, data }) {
   return (
     <div 
       className={`chatitem ${active?'active' : ''}`} 
@@ -16,7 +16,7 @@ export default function ChatListItem({ onClick, active }) {
 
       <section className="chatitem-lines">
         <div className="chatitem-line">
-          <div className="chatitem-name">John Doe</div>
+          <div className="chatitem-name">{data.title}</div>
           <div className="chatitem-date">19:00</div>
         </div>
         <div className="chatitem-line">
