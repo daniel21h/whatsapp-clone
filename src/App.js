@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ChatListItem from './components/ChatListItem'
+import ChatIntro from './components/ChatIntro';
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge'
 import ChatIcon from '@material-ui/icons/Chat'
@@ -11,6 +12,7 @@ import './App.css'
 
 export default () => {
   const [chatlist, setChatlist] = useState([{},{},{},{},{},{},{},{},{},{},{},{}])
+  const [activeChat, setActiveChat] = useState({})
 
   return (
     <div className="app-window">
@@ -53,8 +55,9 @@ export default () => {
           ))}
         </main>
       </aside>
+
       <section className="contentarea">
-        ...
+        <ChatIntro />
       </section>
     </div>
   )

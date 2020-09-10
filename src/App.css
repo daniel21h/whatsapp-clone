@@ -98,5 +98,5 @@ img.avatar {
 }
 
 section.contentarea {
-
+  flex: 1;
 }
