@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro';
+import ChatWindow from './components/ChatWindow';
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge'
 import ChatIcon from '@material-ui/icons/Chat'
@@ -11,7 +12,16 @@ import SearchIcon from '@material-ui/icons/Search'
 import './App.css'
 
 export default () => {
-  const [chatlist, setChatlist] = useState([{},{},{},{},{},{},{},{},{},{},{},{}])
+  const [chatlist, setChatlist] = useState([
+    {chatId: 1, title: 'John Doe'},
+    {chatId: 2, title: 'John Doe'},
+    {chatId: 3, title: 'John Doe'},
+    {chatId: 4, title: 'John Doe'},
+    {chatId: 5, title: 'John Doe'},
+    {chatId: 6, title: 'John Doe'},
+    {chatId: 7, title: 'John Doe'},
+    {chatId: 8, title: 'John Doe'},
+  ])
   const [activeChat, setActiveChat] = useState({})
 
   return (
@@ -51,13 +61,23 @@ export default () => {
 
         <main className="chatlist">
           {chatlist.map((item, key) => (
-            <ChatListItem key={key} />
+            <ChatListItem 
+              key={key} 
+              active={activeChat.chatId === chatlist[key].chatId}
+              onClick={() => setActiveChat(chatlist[key])} 
+            />
           ))}
         </main>
       </aside>
 
       <section className="contentarea">
-        <ChatIntro />
+        {activeChat.chatId !== undefined && 
+          <ChatWindow />
+        }
+        
+        {activeChat.chatId === undefined &&
+          <ChatIntro />
+        }
       </section>
     </div>
   )

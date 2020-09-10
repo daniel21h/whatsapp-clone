@@ -1,9 +1,12 @@
 import React from 'react'
 import './styles.css'
 
-export default function ChatListItem() {
+export default function ChatListItem({ onClick, active }) {
   return (
-    <div className="chatitem">
+    <div 
+      className={`chatitem ${active?'active' : ''}`} 
+      onClick={onClick}
+    >
       <img 
         className="chatitem-avatar"
         src="https://api.adorable.io/avatars/285/abott@adorable.png
