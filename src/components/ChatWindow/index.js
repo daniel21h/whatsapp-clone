@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import EmojiPicker from 'emoji-picker-react'
 
+import MessageItem from '../MessageItem'
+
 import SearchIcon from '@material-ui/icons/Search'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
@@ -22,6 +24,7 @@ export default function ChatWindow() {
   const [emojiOpen, setEmojiOpen] = useState(false)
   const [text, setText] = useState('')
   const [listening, setListening] = useState(false)
+  const [list, setList] = useState([{}, {}, {}])
 
   const handleEmojiClick = (e, emojiObject) => {
     setText(text + emojiObject.emoji)
@@ -80,7 +83,14 @@ export default function ChatWindow() {
         </div>
       </div>
 
-      <div className="chatwindow-body"></div>
+      <div className="chatwindow-body">
+        {list.map((item, key) => (
+          <MessageItem 
+            key={key}
+            data={item}
+          />
+        ))}
+      </div>
 
       <div 
         className="chatwindow-emojiarea"
