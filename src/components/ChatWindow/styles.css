@@ -116,3 +116,12 @@ aside.emoji-picker-react {
 .emoji-picker-react .emoji-group:before {
   background: none;
 }
+
+.chatwindow-body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.chatwindow-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2)
+}

@@ -39,8 +39,142 @@ export default function ChatWindow({ user, data }) {
       body: 'bla bla bla',
       author: 1235,
       hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
     }, 
-    
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    },
   ])
 
   const handleEmojiClick = (e, emojiObject) => {
