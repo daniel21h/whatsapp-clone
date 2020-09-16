@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import EmojiPicker from 'emoji-picker-react'
 
 import MessageItem from '../MessageItem'
@@ -14,6 +14,8 @@ import MicIcon from '@material-ui/icons/Mic'
 import './styles.css'
 
 export default function ChatWindow({ user, data }) {
+  const body = useRef()
+
   let recognition = null
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 
@@ -177,6 +179,12 @@ export default function ChatWindow({ user, data }) {
     },
   ])
 
+  useEffect(() => {
+    if (body.current.scrollHeight > body.current.offsetHeight) {
+      body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight
+    }
+  }, [list])
+
   const handleEmojiClick = (e, emojiObject) => {
     setText(text + emojiObject.emoji)
   }
@@ -234,7 +242,7 @@ export default function ChatWindow({ user, data }) {
         </div>
       </div>
 
-      <div className="chatwindow-body">
+      <div ref={body} className="chatwindow-body">
         {list.map((item, key) => (
           <MessageItem 
             key={key}
