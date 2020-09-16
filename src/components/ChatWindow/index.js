@@ -13,7 +13,7 @@ import MicIcon from '@material-ui/icons/Mic'
 
 import './styles.css'
 
-export default function ChatWindow() {
+export default function ChatWindow({ user, data }) {
   let recognition = null
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 
@@ -24,7 +24,24 @@ export default function ChatWindow() {
   const [emojiOpen, setEmojiOpen] = useState(false)
   const [text, setText] = useState('')
   const [listening, setListening] = useState(false)
-  const [list, setList] = useState([{}, {}, {}])
+  const [list, setList] = useState([
+    {
+      body: 'bla bla bla',
+      author: 123,
+      hour: '19:00'
+    }, 
+    {
+      body: 'asgdhkjesahfwjfda',
+      author: 123,
+      hour: '19:01'
+    }, 
+    {
+      body: 'bla bla bla',
+      author: 1235,
+      hour: '19:05'
+    }, 
+    
+  ])
 
   const handleEmojiClick = (e, emojiObject) => {
     setText(text + emojiObject.emoji)
@@ -88,6 +105,7 @@ export default function ChatWindow() {
           <MessageItem 
             key={key}
             data={item}
+            user={user}
           />
         ))}
       </div>

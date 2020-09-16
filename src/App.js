@@ -22,7 +22,13 @@ export default () => {
     {chatId: 7, title: 'John Doe'},
     {chatId: 8, title: 'John Doe'},
   ])
+
   const [activeChat, setActiveChat] = useState({})
+  const [user, setUser] = useState({
+    id: 1235,
+    avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png',
+    name: 'Daniel Hessel'
+  })
 
   return (
     <div className="app-window">
@@ -30,7 +36,7 @@ export default () => {
         <header>
           <img 
             className="avatar"
-            src="https://api.adorable.io/avatars/285/abott@adorable.png" 
+            src={user.avatar} 
             alt="Avatar"
           />
 
@@ -73,7 +79,9 @@ export default () => {
 
       <section className="contentarea">
         {activeChat.chatId !== undefined && 
-          <ChatWindow />
+          <ChatWindow
+            user={user}
+          />
         }
         
         {activeChat.chatId === undefined &&
