@@ -4,7 +4,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 import './styles.css'
 
-export default function NewChat() {
+export default function NewChat({ chatlist, user, show, setShow }) {
   const [list, setList] = useState([
     {id: 123, avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png', name: 'Daniel Hessel'},
     {id: 123, avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png', name: 'Daniel Hessel'},
@@ -21,10 +21,14 @@ export default function NewChat() {
     {id: 123, avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png', name: 'Daniel Hessel'},
   ])
 
+  const handleClose = () => {
+    setShow(false)
+  }
+
   return (
-    <div className="newchat">
+    <div className="newchat" style={{left: show ? 0 : -415}}>
       <div className="newchat-header">
-        <div className="newchat-backbutton">
+        <div className="newchat-backbutton" onClick={handleClose}>
           <ArrowBackIcon style={{ color: '#ffffff' }} />
         </div>
         <div className="newchat-headtitle">Nova conversa</div>

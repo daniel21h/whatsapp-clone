@@ -31,10 +31,21 @@ export default () => {
     name: 'Daniel Hessel'
   })
 
+  const [showNewChat, setShowNewChat] = useState(false)
+
+  const handleNewChat = () => {
+    setShowNewChat(true)
+  }
+
   return (
     <div className="app-window">
       <aside className="sidebar">
-        <NewChat />
+        <NewChat
+          chatlist={chatlist}
+          user={user}
+          show={showNewChat}
+          setShow={setShowNewChat}
+        />
 
         <header>
           <img 
@@ -48,7 +59,7 @@ export default () => {
               <DonutLargeIcon style={{ color: '#919191' }} />
             </div>
 
-            <div className="header-button">
+            <div className="header-button" onClick={handleNewChat}>
               <ChatIcon style={{ color: '#919191' }} />
             </div>
 
