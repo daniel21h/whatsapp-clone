@@ -11,6 +11,7 @@ import SearchIcon from '@material-ui/icons/Search'
 
 import './App.css'
 import NewChat from './components/NewChat';
+import Login from './components/Login';
 
 export default () => {
   const [chatlist, setChatlist] = useState([
@@ -25,16 +26,26 @@ export default () => {
   ])
 
   const [activeChat, setActiveChat] = useState({})
-  const [user, setUser] = useState({
-    id: 1235,
-    avatar: 'https://api.adorable.io/avatars/285/abott@adorable.png',
-    name: 'Daniel Hessel'
-  })
+  const [user, setUser] = useState(null)
 
   const [showNewChat, setShowNewChat] = useState(false)
 
   const handleNewChat = () => {
     setShowNewChat(true)
+  }
+
+  const handleLoginDatas = async (u) => {
+    let newUser = {
+      id: u.uid,
+      name: u.displayName,
+      avatar: u.photoURL
+    }
+
+    setUser(newUser)
+  }
+
+  if (user === null) {
+    return <Login onReceive={handleLoginDatas} />
   }
 
   return (
@@ -71,7 +82,7 @@ export default () => {
 
         <div className="search">
           <div className="search-input">
-            <SearchIcon fontSize="small" style={{ color: '#919191' }} />
+            <SearchIcon fontS ize="small" style={{ color: '#919191' }} />
             <input 
               type="search" 
               placeholder="Procurar ou iniciar uma nova conversa" 
