@@ -10,6 +10,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import SearchIcon from '@material-ui/icons/Search'
 
 import './App.css'
+import NewChat from './components/NewChat';
 
 export default () => {
   const [chatlist, setChatlist] = useState([
@@ -33,6 +34,8 @@ export default () => {
   return (
     <div className="app-window">
       <aside className="sidebar">
+        <NewChat />
+
         <header>
           <img 
             className="avatar"
