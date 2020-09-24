@@ -76,4 +76,19 @@ export default {
         }),
       });
   },
+
+  onChatList: (userId, setChatlist) => {
+    return db
+      .collection("users")
+      .doc(userId)
+      .onSnapshot((doc) => {
+        if (doc.exists) {
+          let data = doc.data();
+
+          if (data.chats) {
+            setChatlist(data.chats);
+          }
+        }
+      });
+  },
 };
